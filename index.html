@@ -1,3 +1,8 @@
+<!-- TODO:
+- [ ] Initialize firebase db
+- [ ] Add way to incrementally write data to db for given participant
+-->
+
 <!DOCTYPE html>
 
 <html>
@@ -19,7 +24,26 @@
 		<link rel = "stylesheet" href = "jsPsych/jsPsych.css" type="text/css">    </head>
 	</head>
 	<body>
-	<script>
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+			apiKey: "AIzaSyDVRPEkqZVRCZGaf0TkP6PsYBKbEdumIgc",
+			authDomain: "jspsych-firebase-template.firebaseapp.com",
+			projectId: "jspsych-firebase-template",
+			storageBucket: "jspsych-firebase-template.appspot.com",
+			messagingSenderId: "471080365978",
+			appId: "1:471080365978:web:e67e5176c690ada9631423"
+		};
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		</script>
+		<script>
 		const jsPsych = initJsPsych({
 			// on_finish: function() {
 			// 	jsPsych.data.displayData('JSON');
